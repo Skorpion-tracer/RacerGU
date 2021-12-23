@@ -33,7 +33,10 @@ namespace Controllers
 
         private void StartGame()
         {
+            _profilePlayer.AdsShower.ShowInterstitial();
             _profilePlayer.CurrentState.Value = GameState.Game;
+            _profilePlayer.AnalyticsTools.SendMessage("Start Game", ("time", Time.realtimeSinceStartup));
+            _profilePlayer.AdsShower.ShowBanner();
         }
     }
 }

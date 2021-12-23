@@ -37,6 +37,7 @@ namespace Controllers
                     break;
                 case GameState.Game:
                     _gameController = new GameController(_profilePlayer);
+                    _profilePlayer.AnalyticsTools.SendMessage("Time before the start", ("Time", Time.realtimeSinceStartup));
                     _mainMenuController?.Dispose();
                     break;
                 default:

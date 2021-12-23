@@ -1,4 +1,5 @@
 ﻿using JoostenProductions;
+using Profile;
 using Tools;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,11 +13,18 @@ namespace Game.InputLogic
         [SerializeField] private CanvasGroup _container;
 
         private bool _usedJoystick;
+        private ProfilePlayer _profilePlayer;
+        private int _count = 0;
 
         public override void Init(SubscriptionProperty<float> leftMove, SubscriptionProperty<float> rightMove, float speed)
         {
             base.Init(leftMove, rightMove, speed);
             UpdateManager.SubscribeToUpdate(Move);
+        }
+
+        public void SetProfilePlayer(ProfilePlayer profilePlayer)
+        {
+            _profilePlayer = profilePlayer;
         }
 
         private void OnDestroy()
@@ -36,6 +44,7 @@ namespace Game.InputLogic
             _joystick.OnPointerDown(eventData);
             _usedJoystick = true;
             _container.alpha = 1;
+            _profilePlayer.AnalyticsTools.SendMessage($"Используется джойстик {_count} раз");
         }
 
         public void OnPointerUp(PointerEventData eventData)

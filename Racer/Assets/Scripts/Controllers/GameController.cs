@@ -17,7 +17,7 @@ namespace Controllers
             var inputGameController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.CurrentCar);
             AddController(inputGameController);
 
-            var floatinputController = new FloatJoysticController(leftMoveDiff, rightMoveDiff, profilePlayer.CurrentCar);
+            var floatinputController = new FloatJoysticController(leftMoveDiff, rightMoveDiff, profilePlayer);
             AddController(floatinputController);
 
             var carController = new CarController();
