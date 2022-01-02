@@ -326,6 +326,7 @@ GameObject:
   - component: {fileID: 1943874469}
   - component: {fileID: 1943874468}
   - component: {fileID: 1943874472}
+  - component: {fileID: 1943874473}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -426,3 +427,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _placeForUi: {fileID: 1943874471}
   _unityAdsTools: {fileID: 1418516150}
+  _itemConfigs:
+  - {fileID: 11400000, guid: 96a36439dbeb2194280022ffef3467a9, type: 2}
+  - {fileID: 11400000, guid: 253471dcf0153a94788944bffbd5e0a8, type: 2}
+  - {fileID: 11400000, guid: bb77c169dbe4d364289f622bd77ba38c, type: 2}
+--- !u!225 &1943874473
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943874467}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
